@@ -1,10 +1,50 @@
 <div class="sidebar">
-  <div class="sidebar-header"></div>
-  <div class="sidebar-searchbox">
-    <img src="../assets//images/search.png" alt="search" width="18px" />
-    <input type="text" placeholder="Search or start the new chat" />
+  <div class="sidebar-header__container">
+    <div class="sidebar-header">
+      <div class="avatarContainer">
+        <img src="../../assets/images/avatar.jpeg" alt="" />
+      </div>
+      <div class="actionsContainer">
+        <img src="../../assets/images/statusIcon.svg" alt="" />
+        <img src="../../assets/images/chatIcon.svg" alt="" />
+        <img src="../../assets/images/moreIcon.svg" alt="" />
+      </div>
+    </div>
+    <div class="sidebar-searchbox">
+      <img src="../assets//images/searchicon.svg" alt="search" width="18px" />
+      <input type="text" placeholder="Search or start the new chat" />
+    </div>
   </div>
   <div class="sidebar-content">
-    <div class="noConversation">All chats are archived</div>
+    <!-- <div class="noConversation">All chats are archived</div> -->
+
+    <div class="conversation" *ngFor="let conversation of conversations">
+      <div class="conversation-proPic">
+        <img src="../../assets/images/noPic.svg" alt="" />
+      </div>
+      <div class="conversation-content">
+        <div class="conversation-content--header">
+          <div class="conversation-content--header__name">
+            {{ conversation.name }}
+          </div>
+          <div class="conversation-content--header__time">
+            {{ conversation.time }}
+          </div>
+        </div>
+        <div class="conversation-content--message">
+          <img
+            *ngIf="!conversation.latestMessageRead"
+            src="../../assets/images/doubleTick.svg"
+            alt=""
+          />
+          <img
+            *ngIf="conversation.latestMessageRead"
+            src="../../assets/images/blueTick.svg"
+            alt=""
+          />
+          {{ conversation.latestMessage }}
+        </div>
+      </div>
+    </div>
   </div>
 </div>
