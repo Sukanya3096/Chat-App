@@ -2,6 +2,7 @@
 body {
   margin: 0;
   font-family: "sans-serif";
+  color: #a1a2a3;
 }
 ::-webkit-scrollbar {
   height: 5px;
@@ -13,4 +14,8 @@ body {
 ::-webkit-scrollbar-thumb:vertical {
   height: 30px;
   background-color: #dddcdc;
+}
+a {
+  text-decoration: none;
+  color: #45bf57;
 }
