@@ -18,7 +18,11 @@
   <div class="sidebar-content">
     <!-- <div class="noConversation">All chats are archived</div> -->
 
-    <div class="conversation" *ngFor="let conversation of conversations">
+    <div
+      class="conversation"
+      *ngFor="let conversation of conversations"
+      (click)="conversationClicked.emit(conversation)"
+    >
       <div class="conversation-proPic">
         <img src="../../assets/images/noPic.svg" alt="" />
       </div>
